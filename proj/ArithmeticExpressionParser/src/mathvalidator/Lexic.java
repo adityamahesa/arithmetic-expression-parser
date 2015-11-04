@@ -12,17 +12,14 @@ package mathvalidator;
  */
 public class Lexic {
     private String word;
-    private String unit;
     private int token;
     
     public Lexic(){}
     
-    public Lexic(String word, String unit, int token){
+    public Lexic(String word, int token){
         this.word = word;
-        this.unit = unit;
         this.token = token;
     }
-    
 
     /**
      * @return the word
@@ -39,20 +36,6 @@ public class Lexic {
     }
 
     /**
-     * @return the unit
-     */
-    public String getUnit() {
-        return unit;
-    }
-
-    /**
-     * @param unit the unit to set
-     */
-    public void setUnit(String unit) {
-        this.unit = unit;
-    }
-
-    /**
      * @return the token
      */
     public int getToken() {
@@ -65,4 +48,5 @@ public class Lexic {
     public void setToken(int token) {
         this.token = token;
     }
+    
 }

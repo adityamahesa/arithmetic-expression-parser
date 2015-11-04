@@ -10,14 +10,15 @@ package mathvalidator;
  *
  * @author adityamahesa
  */
-public class MathValidator {
+public class ArithmeticExpressionParser {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println(new DFA("001001001").isValid());
+        String word = "";
+        System.out.println(new LexicParser("((()))+-+-+/*/*/").isValid());
     }
     
 }
