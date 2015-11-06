@@ -12,11 +12,11 @@ package mathvalidator;
  */
 public class Lexic {
     private String word;
-    private int token;
+    private Token token;
     
     public Lexic(){}
     
-    public Lexic(String word, int token){
+    public Lexic(String word, Token token){
         this.word = word;
         this.token = token;
     }
@@ -38,14 +38,14 @@ public class Lexic {
     /**
      * @return the token
      */
-    public int getToken() {
+    public Token getToken() {
         return token;
     }
 
     /**
      * @param token the token to set
      */
-    public void setToken(int token) {
+    public void setToken(Token token) {
         this.token = token;
     }
     

@@ -14,37 +14,15 @@ public abstract class DeterministicFiniteAutomata{
     protected final String word;
     protected String subWord;
     protected char input;
-    protected int index;    
-    protected class State{
-        private final int number;
-        private final boolean finalState;
-        private State(boolean finalState){
-            this.number = 0;
-            this.finalState = finalState;
-        }
-        protected State(int number, boolean finalState){
-            this.number = number;
-            this.finalState = finalState;
-        }
-        protected int getNumber(){
-            return this.number;
-        }
-        protected boolean isFinalState(){
-            return this.finalState;
-        }
-    }
-    protected State initialState; 
+    protected int index;
     protected State currentState;
     
-    protected DeterministicFiniteAutomata(String word, boolean initialStateIsFinalState){
+    protected DeterministicFiniteAutomata(String word){
         identifyState();
         this.word = word;
-        this.initialState = new State(initialStateIsFinalState);
         if(word.length() > 0){
             initiateState();
-            operate();
         }
-        else this.currentState = this.initialState;
     }
     
     protected final void initiateState(){
@@ -63,7 +41,6 @@ public abstract class DeterministicFiniteAutomata{
     protected abstract State switchState();
     
     protected final void operate(){
-        this.currentState = this.initialState;
         do{
             this.currentState = switchState();
         }while(readNext());
